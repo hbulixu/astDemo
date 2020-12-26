@@ -55,6 +55,7 @@ class IntegerLiteralNode extends CustomAstNode{
   E accept<E>(Visitor<E> visitor) =>visitor.visitIntegerLiteral(this);
 }
 
+//赋值表达式
 class AssignmentExpression extends  Expression{
   Token eq;
   CustomAstNode left;
@@ -89,6 +90,7 @@ class VariableDeclarationNode extends Expression{
   E accept<E>(Visitor<E> visitor) =>visitor.visitVariableDeclaration(this);
 }
 
+//方法声明
 class FunctionDeclarationNode extends CustomAstNode{
 
    Identify functionName;
