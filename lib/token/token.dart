@@ -23,7 +23,7 @@ enum TokenKind{
   $VAR, //var
   $OPEN_PAREN, // (
   $CLOSE_PAREN,// )
-  $LITERAL_NUM,// 字面量常量
+  $LITERAL_NUM,// 数字常量
   $SEMICOLON, //;
   $OPEN_CURLY_BRACKET, // {
   $CLOSE_CURLY_BRACKET //}

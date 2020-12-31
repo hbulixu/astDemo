@@ -17,9 +17,9 @@ class MapVisitor extends Visitor<Map>{
   @override
   Map visitAssignmentExpression(AssignmentExpression node) {
     return {'AssignmentExpression':{
-      'left':node.left.visitNode(),
+      'left':node.left.accept(this),
       'eq': node.eq.value,
-      'right':node.right.visitNode()
+      'right':node.right.accept(this)
     }};
   }
 
@@ -35,7 +35,7 @@ class MapVisitor extends Visitor<Map>{
       mapArray.add(element.visitNode());
     });
     return {
-      'function':node.functionName.visitNode(),
+      'function':node.functionName.accept(this),
       'body':mapArray,
     };
   }
@@ -53,7 +53,7 @@ class MapVisitor extends Visitor<Map>{
   @override
   Map visitVariableDeclaration(VariableDeclarationNode node) {
     return {'VariableDeclarationNode':{
-      'name':node.varName.visitNode()
+      'name':node.varName.accept(this)
     }};
   }
 

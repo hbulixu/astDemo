@@ -181,7 +181,7 @@ void ast_gen(){
 
       FunctionDeclarationNode functionNode =  FunctionDeclarationNode(functionName,null,Body);
 
-    //  var functionMap = functionNode.visitNode();
+     //var functionMap = functionNode.visitNode();
       var functionMap = functionNode.accept(MapVisitor());
       var encoder = JsonEncoder.withIndent('  ');
       print(encoder.convert(functionMap));
